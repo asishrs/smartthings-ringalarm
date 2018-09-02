@@ -140,3 +140,7 @@ You need to install the device handler and smart app using the SmartThings ID to
   - **API Key** - API key from Lambda setup
   - **Location Id** - Location Id value found in browser Network panel.
   - **ZID** - ZID value found in browser Network panel.
+
+## License
+
+SmartThings - Ring Alarm is released under the [MIT License](https://opensource.org/licenses/MIT).
