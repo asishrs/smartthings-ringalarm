@@ -17,9 +17,9 @@ As I mentioned before, the bridge application is a proxy between the SmartThings
 
 You need to install this Lambda in AWS and set up an API gateway to communicate to that. This approach is using the API with Lambda integration using API Gateway. This code also requires an API authentication token. If you are already familiar with setting Lambda with API token, you can skip to the SmartThings Device Handler and Smart App.
 
-Follow the below steps to install and setup Lambda in AWS. You need to have AWS  account before proceeding to next step. If you don't have an account, start [here](https://aws.amazon.com/account/)
+Follow the below steps to install and setup Lambda in AWS. You need to have AWS  account and the latest Lambda build from [here](https://github.com/asishrs/smartthings-ringalarm/releases) before proceeding to the next step. If you don't have an account, start [here](https://aws.amazon.com/account/)
 
-Build The lam
+If you want to build the Lambda on your side, you can do that by cloning this repo and then executing ` ./gradlew build -x test`
 
 ### Deploy a lambda in AWS?
 - Open https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions
@@ -39,6 +39,7 @@ Build The lam
 - Click on **Save** button on right side top.
 - On the **Designer** section, click on your function name.
 - In the Function Code section, make sure you have values for **Upload a .ZIP or JAR file** as **Code Entry** **type** and **Java 8** as **Runtime**.
+- Click on the **Upload** button and select the **ring-alarm-1.0-SNAPSHOT.zip** downloaded  or in build/distributions/ directory.
 - Update **Handler** *as org.yagna.lambda.APIRequestHandler::handleRequest*
 - In the **Function Code** section, click on **Upload** button and choose the zip file previously downloaded.
 - Click on **Save** button on right side top.
