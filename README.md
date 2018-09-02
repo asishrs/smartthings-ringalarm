@@ -1,6 +1,6 @@
-#SmartThings - Ring Alarm
+# SmartThings - Ring Alarm
 
-==Warning== This setup is going to take an hour to few hours depending on your exposure on the SmartThings app, AWS Lambda, and Java.
+**Warning** - This setup is going to take an hour to few hours depending on your exposure on the SmartThings app, AWS Lambda, and Java.
 
 This page explains, how to set up Ring Alarm as a virtual device on your SmartThings. Ring Alarm uses WebSockets to communicate to ring server for checking Alarm Status and Status changes. Unfortunately, SmartThings app does not support WebSockets, and we have to create a bridge application which accepts HTTP calls from SmartThings and communicate to Ring Alarm via WebSockets. Below diagram explains the flow.
 
@@ -12,14 +12,16 @@ If you are still reading this,  that means you are ready to invest at least an h
 
 This setup requires the deployment of two different components.
 
-##Bridge Application
+## Bridge Application
 As I mentioned before, the bridge application is a proxy between the SmartThings custom app and Ring Alarm. For ease of deployment, I created this as an [AWS Lambda function](https://aws.amazon.com/lambda/) using Java.
 
 You need to install this Lambda in AWS and set up an API gateway to communicate to that. This approach is using the API with Lambda integration using API Gateway. This code also requires an API authentication token. If you are already familiar with setting Lambda with API token, you can skip to the SmartThings Device Handler and Smart App.
 
 Follow the below steps to install and setup Lambda in AWS. You need to have AWS  account before proceeding to next step. If you don't have an account, start [here](https://aws.amazon.com/account/)
 
-###Deploy a lambda in AWS?
+Build The lam
+
+### Deploy a lambda in AWS?
 - Open https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions
 - Click on **Create Function** and provide below details
   * **Name** - a name for your lambda (Example: Ring-Alarm)
@@ -67,10 +69,10 @@ Follow the below steps to install and setup Lambda in AWS. You need to have AWS 
   * Click on **Show** link on the API key
   * Save API Key for SmartThings Application configuration.
 
-####Get Ring Location Id and ZID
+#### et Ring Location Id and ZID
 Ring Alarm requires to pass location id and zid of your alarm as part the web sockets call. Though this can achieve via API calls, we don't want to do that as this increases the total number of calls to make before actual web sockets call. You can get those values from the network panel of your browser. Follow below steps to get those.
 
-#####Location Id
+##### Location Id
 - Open your **chrome network panel** (*Option + Command + I in Mac*) and login to Ring Alarm.
 - In the network panel, search for **locations**.
 - Click on the location API call on the left side.
@@ -108,7 +110,7 @@ Ring Alarm requires to pass location id and zid of your alarm as part the web so
   ```
 ## SmartThings Device Handler and Smart App
 You need to install the device handler and smart app using the SmartThings ID to use the Lambda API calls.
-###Install SmartThings Device Handler
+### Install SmartThings Device Handler
  - Login at http://graph.api.smartthings.com
  - Select **My Locations**, select the location you want to use.
  - Select  **My Device Handlers**
@@ -119,7 +121,7 @@ You need to install the device handler and smart app using the SmartThings ID to
   - Click the blue **Save** button above the editor window.
   - Click the **Publish** button next to it and select **For Me**. You have now self-published your Device Handler
 
-###Install SmartThings App
+### Install SmartThings App
  - *(optional)* Login at http://graph.api.smartthings.com
  - *(optional)* Select **My Locations**, select the location you want to use.
  - Select **My SmartApps**
@@ -130,7 +132,7 @@ You need to install the device handler and smart app using the SmartThings ID to
 - Click the blue **Save** button above the editor window.
 - Click the **Publish** button next to it and select **For Me**. You have now self-published your SmartApp
 
-##Setup your SmartThings App
+## Setup your SmartThings App
 - Open your SmartThings app and go to **My Home**
 - Tap on the Ring Alarm and then tap on the **settings** (*gear icon*).
 - Add below
