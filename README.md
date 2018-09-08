@@ -2,7 +2,9 @@
 
 ![Build Status](https://api.travis-ci.org/asishrs/smartthings-ringalarm.svg?branch=master "Build Status")
 
-**Warning** - This setup is going to take 30 minutes to an hour depending on your exposure on the SmartThings app, AWS Lambda, and Java.
+
+> - :clock1: This setup is going to take 30 minutes to an hour depending on your exposure on the [SmartThings app](https://docs.smartthings.com/en/latest/getting-started/first-smartapp.html), [AWS Lambda](https://aws.amazon.com/lambda/), and Java.
+> - :dollar: Deploying the Bridge Application in AWS as a Lambda is free but you will be charged for the use of API Gateway and Data Transfer. Based on my initial calculation this will less than a dollor per month. 
 
 This page explains, how to set up Ring Alarm as a virtual device on your SmartThings. Ring Alarm uses WebSockets to communicate to ring server for checking Alarm Status and Status changes. Unfortunately, SmartThings app does not support WebSockets, and we have to create a bridge application which accepts HTTP calls from SmartThings and communicate to Ring Alarm via WebSockets. Below diagram explains the flow.
 
@@ -72,7 +74,7 @@ If you want to build the Lambda on your side, you can do that by cloning this re
   * Click on **Show** link on the API key
   * Save API Key for SmartThings Application configuration.
 
-#### et Ring Location Id and ZID
+#### Get Ring Location Id and ZID
 Ring Alarm requires to pass location id and zid of your alarm as part the web sockets call. Though this can achieve via API calls, we don't want to do that as this increases the total number of calls to make before actual web sockets call. You can get those values from the network panel of your browser. Follow below steps to get those.
 
 ##### Location Id
@@ -83,7 +85,7 @@ Ring Alarm requires to pass location id and zid of your alarm as part the web so
   * In the **Header panel**, confirm the URL is https://app.ring.com/rhq/v1/devices/v1/locations
   * In the **Preview panel**, you can see the value of **location_id**. Save **location_id** for lambda testing and SmartThings Application configuration.
 
-#####ZID
+##### ZID
 - *Optional*, open your **chrome network panel** (*Option + Command + I in Mac*) and login to Ring Alarm.
 - In the network panel, search for **socket.io**
 - Click on the WebSocket call on the left side.
@@ -93,7 +95,7 @@ Ring Alarm requires to pass location id and zid of your alarm as part the web so
   * Search for **Ring Alarm** on the message.
   * On that block, you can find a JSON key **zid**. Save **zid** for lambda testing and SmartThings Application configuration.
 
-###Test Lambda
+### Test Lambda
   * URLs
     * POST /{Invoke URL From Above}/status
     * POST /{Invoke URL From Above}/off
