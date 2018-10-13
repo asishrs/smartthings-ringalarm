@@ -43,9 +43,8 @@ If you want to build the Lambda on your side, you can do that by cloning this re
 - Click on **Save** button on right side top.
 - On the **Designer** section, click on your function name.
 - In the Function Code section, make sure you have values for **Upload a .ZIP or JAR file** as **Code Entry** **type** and **Java 8** as **Runtime**.
-- Click on the **Upload** button and select the **ring-alarm-1.0-SNAPSHOT.zip** downloaded  or in build/distributions/ directory.
+- Click on the **Upload** button and select the **ring-alarm-<version>-SNAPSHOT.zip** downloaded  or the local built version in build/distributions/ directory.
 - Update **Handler** *as org.yagna.lambda.APIRequestHandler::handleRequest*
-- In the **Function Code** section, click on **Upload** button and choose the zip file previously downloaded.
 - Click on **Save** button on right side top.
 - Update API
   * Open https://us-east-1.console.aws.amazon.com/apigateway/home?region=us-east-1#/apis
