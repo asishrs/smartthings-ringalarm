@@ -52,7 +52,7 @@ If you want to build the Lambda on your side, you can do that by cloning this re
   * Under APIs, click on your API.
   * From the Actions, select **Create Resource**
     * Enable Configure as proxy resource
-    * Resource Path - Update value as {ring-action+}
+    * Resource Path - Update value as **{ring-action+}**
     * Click on **Create Resource**
     * Lambda Function - Enter name of your Lambda function
     * Click on **Save**
