@@ -137,6 +137,8 @@ You need to install the device handler and smart app using the SmartThings ID to
 - Click the **Publish** button next to it and select **For Me**. You have now self-published your SmartApp
 
 ## Setup your SmartThings App
+This is based on *Smarthing Classic App*.
+
 - Open your SmartThings app and go to **My Home**
 - Tap on the Ring Alarm and then tap on the **settings** (*gear icon*).
 - Add below
@@ -146,6 +148,12 @@ You need to install the device handler and smart app using the SmartThings ID to
   - **API Key** - API key from Lambda setup
   - **Location Id** - Location Id value found in browser Network panel.
   - **ZID** - ZID value found in browser Network panel.
+
+|                           My Home                            | Ring Alarm Settings                                          |
+| :----------------------------------------------------------: | ------------------------------------------------------------ |
+| ![SmartThings - My Home](images/smarthings_classic_app.jpg?raw=true "SmartThings Classic- Home") | ![SmartThings - My Home](images/smartthings-classic-app-settings.jpg?raw=true "SmartThings Classic- Home") |
+
+
 
 ## License
 
