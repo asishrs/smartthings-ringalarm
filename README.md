@@ -49,7 +49,7 @@ If you want to build the Lambda on your side, you can do that by cloning this re
 - Update API
   * Open https://us-east-1.console.aws.amazon.com/apigateway/home?region=us-east-1#/apis
   * Under APIs, click on your API.
-  * click "/" above "/Ring-Alarm"
+  * Click **/** above **/Ring-Alarm**
   * From the Actions, select **Create Resource**
     * Enable Configure as proxy resource
     * Resource Path - Update value as **{ring-action+}**
