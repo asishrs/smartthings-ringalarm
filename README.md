@@ -96,7 +96,7 @@ or
   * In the **Preview panel**, you can see the value of **location_id**. Save **location_id** for lambda testing and SmartThings Application configuration.
 
 ##### ZID
-- *Optional*, open your **chrome network panel** (*Option + Command + I in Mac*) and login to Ring Alarm.
+- Open your **chrome network panel** (*Option + Command + I in Mac*) and login to Ring Alarm.
 - In the network panel, search for **socket.io**
 - Click on the WebSocket call on the left side.
 - From the right side
