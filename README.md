@@ -88,7 +88,7 @@ Ring Alarm requires to pass location id and zid of your alarm as part the web so
 - location ID is shown in the URL: https://app.ring.com/location/<location ID>/dashboard
 or
 - Login to Ring Dashboard 
-- Open your **chrome network panel** (*Option + Command + I in Mac*) and login to Ring Alarm.
+- Open your **chrome network panel** (*Option + Command + I in Mac*, *Ctrl + Shift + I in Windows*) and login to Ring Alarm.
 - In the network panel, search for **locations**.
 - Click on the location API call on the left side.
 - From the right side
@@ -96,13 +96,13 @@ or
   * In the **Preview panel**, you can see the value of **location_id**. Save **location_id** for lambda testing and SmartThings Application configuration.
 
 ##### ZID
-- Open your **chrome network panel** (*Option + Command + I in Mac*) and login to Ring Alarm.
+- Open your **chrome network panel** (*Option + Command + I in Mac*, *Ctrl + Shift + I in Windows*) and login to Ring Alarm.
 - In the network panel, search for **socket.io**
 - Click on the WebSocket call on the left side.
 - From the right side
   * In the **Frames** panel, check a frame response with message like `"msg":"DeviceInfoDocGetList"` (**Tip**: *If you are using chrome browser, you can see a red color down arrow on the left side of message.*)
-  * Copy that value (*Right Click on the mouse and select **Copy Message***) and paste in your favorite text editor. I prefer an editor like Visual Studio Code as I can format that big message using JSON format.
-  * Search for **Ring Alarm** on the message.
+  * Copy that value (*Right Click on the mouse and select **Copy Message***) and paste in your favorite text editor. I prefer an editor like Visual Studio Code as I can format that big message body using JSON format.
+  * Search for **Ring Alarm** on the message and then copy the first **zid** after **Ring Alarm**.
   * On that block, you can find a JSON key **zid**. Save **zid** for lambda testing and SmartThings Application configuration.
 
 ### Test Lambda
