@@ -49,6 +49,7 @@ If you want to build the Lambda on your side, you can do that by cloning this re
 - Update API
   * Open https://us-east-1.console.aws.amazon.com/apigateway/home?region=us-east-1#/apis
   * Under APIs, click on your API.
+  * click "/" above "/Ring-Alarm"
   * From the Actions, select **Create Resource**
     * Enable Configure as proxy resource
     * Resource Path - Update value as **{ring-action+}**
@@ -72,11 +73,21 @@ If you want to build the Lambda on your side, you can do that by cloning this re
   * Select your API Key
   * Click on **Show** link on the API key
   * Save API Key for SmartThings Application configuration.
+  
+- Link Usage Plan
+  * From the API main page, select **Usage Plans**
+  * Click Ring-Alarm-*
+  * Click **Add API Stage**
+  * Select the approriate API and Stage
 
 #### Get Ring Location Id and ZID
 Ring Alarm requires to pass location id and zid of your alarm as part the web sockets call. Though this can achieve via API calls, we don't want to do that as this increases the total number of calls to make before actual web sockets call. You can get those values from the network panel of your browser. Follow below steps to get those.
 
 ##### Location Id
+- Login to Ring Dashboard
+- location ID is shown in the URL: https://app.ring.com/location/<location ID>/dashboard
+or
+- Login to Ring Dashboard 
 - Open your **chrome network panel** (*Option + Command + I in Mac*) and login to Ring Alarm.
 - In the network panel, search for **locations**.
 - Click on the location API call on the left side.
@@ -124,6 +135,21 @@ You need to install the device handler and smart app using the SmartThings ID to
   - Click the **Create** button at the bottom.
   - Click the blue **Save** button above the editor window.
   - Click the **Publish** button next to it and select **For Me**. You have now self-published your Device Handler
+### Install Alarm Device  
+  - Select **My Devices**
+  - Click on the **+ New Device** button on the right.
+  - Fill the Name and Network ID Field (can be anything you like)
+  - Under Type, select RingAlarm
+  - Select appropriate options under Location and Hub
+  - Click **Create**
+  - Click **Preferences (edit)** 
+  - Input below:
+    - **Ring User Name**
+    - **Ring Password**
+    - **API Url** - Invoke URL from Lambda setup (should end with .com/default)
+    - **API Key** - API key from Lambda setup
+    - **Location Id** - Location Id value found in browser Network panel.
+    - **ZID** - ZID value found in browser Network panel.
 
 ### Install SmartThings App
  - *(optional)* Login at http://graph.api.smartthings.com
