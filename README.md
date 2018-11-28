@@ -115,7 +115,7 @@ or
   ```
   curl -X POST \
     {Invoke URL From Above}/status \
-    -H 'x-api-key: <<aws gateway api key>>' \
+    -H 'x-api-key: your-aws-api-key' \
     -d '{
     "user": "ring username",
     "password" : "ring password",
