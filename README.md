@@ -10,7 +10,7 @@ This page explains, how to set up Ring Alarm as a virtual device on your SmartTh
 
 ![SmartThings - Ring Alarm](images/SmartThings-Ring.png?raw=true "SmartThings - Ring Alarm")
 
-**Note:** I have SmartThings classic app, and this approach is tested using that. If you are on in new SmartThings app, let me know if this approach requires any changes. PRs are welcome!
+**Note:** I have SmartThings classic app, and this approach is tested using that. If you are using new SmartThings app, let me know if this approach requires any changes. PRs are welcome!
 
 If you are still reading this,  that means you are ready to invest at least an hour!!!
 
